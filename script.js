@@ -23,6 +23,18 @@
   });
   document.querySelector('#year').textContent = new Date().getFullYear();
   const socials = document.querySelector('#social-links');
+  if (data.hero) {
+    const heroImage = document.querySelector('.hero-art img');
+    heroImage.src = safeUrl(data.hero.image, true); heroImage.alt = data.hero.alt;
+    document.querySelector('.hero-art figcaption span').textContent = data.hero.caption;
+  }
+  if (data.portrait) {
+    const portrait = document.createElement('img');
+    portrait.src = safeUrl(data.portrait.image, true); portrait.alt = data.portrait.alt;
+    portrait.className = 'about-portrait'; portrait.loading = 'lazy';
+    portrait.width = 600; portrait.height = 750;
+    document.querySelector('.monogram').replaceWith(portrait);
+  }
   socials.replaceChildren();
   (data.socials || []).forEach(social => {
     const url = safeUrl(social.url); if (!url) return;
@@ -43,7 +55,16 @@
     if (project.credit && safeUrl(project.credit.url)) {
       const credit = document.createElement('a'); credit.href = project.credit.url; credit.textContent = project.credit.label; credit.target = '_blank'; credit.rel = 'noopener noreferrer'; disclaimer.append(credit);
     }
-    dialog.showModal(); document.body.classList.add('modal-open'); closeButton.focus();
+    let gallery = dialog.querySelector('.project-gallery');
+    if (!gallery) { gallery = document.createElement('div'); gallery.className = 'project-gallery'; dialog.querySelector('.dialog-layout').append(gallery); }
+    gallery.replaceChildren();
+    (project.gallery || []).forEach(item => {
+      const figure = document.createElement('figure');
+      const photo = document.createElement('img'); photo.src = safeUrl(item.image, true); photo.alt = item.alt; photo.loading = 'lazy'; photo.width = 1200; photo.height = 900;
+      const caption = document.createElement('figcaption'); caption.textContent = `${item.caption}${item.placeholder ? ' / Image placeholder' : ''}`;
+      figure.append(photo, caption); gallery.append(figure);
+    });
+    dialog.showModal(); dialog.scrollTop = 0; document.body.classList.add('modal-open'); closeButton.focus();
   }
   function closeProject() { dialog.close(); }
   dialog.addEventListener('close', () => { document.body.classList.remove('modal-open'); returnFocus?.focus(); });

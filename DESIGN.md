@@ -22,6 +22,10 @@ The experience is concise and easy to scan. The portrait establishes the person;
 
 All five project images are placeholders, visibly identified. Titles describe illustrative directions rather than fabricated professional projects. David can replace them in one content file, and the index automatically switches to “Selected work” as real projects are added.
 
+## Expanded image system
+
+The revised portfolio adds an editable portrait and three gallery placements per discipline, alongside the existing five cover images and hero. Wide overview images lead each project gallery; detail and process images follow in two columns, stacking on mobile. Neutral, explicitly labeled placeholder artwork keeps incomplete content honest. Gallery captions and alternative text are editable with the project data.
+
 ## Delivery
 
-The requested final destination is the `dav256/portfolio` GitHub repository. The user’s latest instruction is a pull request only: no publication or Pages settings changes. The implementation is dependency-free static source with no deployment workflow. Framer was requested originally, but an available Framer integration could not be found; this is explicitly documented as a static implementation, not misrepresented as a Framer file.
+The requested final destination is a pull request in `dav256/portfolio`. The repository already has a working portfolio and Pages deployment; this change extends that implementation. Pages currently serves the older feature branch. The README explains how David can switch to main after merging. The implementation is dependency-free static source. A Framer integration was not found, so this is explicitly a static website, not a Framer project.

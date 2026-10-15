@@ -23,11 +23,27 @@ Edit `content.js`. Each project has a title, discipline, medium, image, alt text
 
 The public email is `dgarner.whs@gmail.com`, as supplied. Update `email` and `socials` in `content.js` to change contact details. Keep the fallback mail links in `index.html` in sync if changing the address. GitHub is the only social profile currently supplied and verified. Update the introductory and About copy directly in `index.html` and styles in `styles.css`.
 
-## Publishing later, if David chooses
+## Hero, portrait, and project galleries
 
-**This change is delivered as a pull request only. It does not enable or deploy GitHub Pages.** There is no deployment workflow.
+There are 22 image placements: a hero, a portrait, five project covers, and three gallery images for each of the five projects. All sample imagery is clearly identified. Edit `hero` and `portrait` in `content.js` to replace the opening visual and About portrait.
 
-After reviewing and merging the pull request, David can enable Pages:
+To customize a project's gallery, add a `gallery` array inside its project object. The shared defaults at the end of `content.js` only fill projects without their own gallery:
+
+```js
+gallery: [
+  { image: 'assets/my-project-overview.jpg', alt: 'Describe the actual image', caption: '01 / Overview', placeholder: false },
+  { image: 'assets/my-project-detail.jpg', alt: 'Describe the detail', caption: '02 / Detail', placeholder: false },
+  { image: 'assets/my-project-process.jpg', alt: 'Describe the process', caption: '03 / Process', placeholder: false }
+],
+```
+
+Recommended dimensions: 1200 × 900 for galleries, 600 × 750 for the portrait. Use optimized JPG, PNG, WebP, or SVG files. Images use `object-fit: cover`; keep key details away from the edges. No CMS or paid subscription is required.
+
+## Publishing the updated version
+
+GitHub Pages is already enabled and was serving the `feat/davfxstudio-portfolio` branch when checked on October 15, 2026. This update is delivered in a new pull request; it does not overwrite the deployed branch. There is no deployment workflow.
+
+After reviewing and merging the pull request, David can publish the current version:
 
 1. Open this repository’s **Settings → Pages**.
 2. Under **Build and deployment**, select **Deploy from a branch**.

@@ -2,6 +2,8 @@
    Set placeholder: false only after replacing sample content with David's work.
    Only publish contact details and social profiles David wants made public. */
 window.PORTFOLIO = {
+  hero: { image: 'assets/form-study.svg', alt: 'Abstract silver form study — a placeholder for David’s featured creative image', caption: 'FORM STUDY — 001' },
+  portrait: { image: 'assets/portrait-placeholder.svg', alt: 'Portrait placeholder, ready for a photograph of David' },
   email: 'dgarner.whs@gmail.com',
   socials: [{ label: 'GitHub', url: 'https://github.com/dav256' }],
   projects: [
@@ -43,3 +45,13 @@ window.PORTFOLIO = {
     }
   ]
 };
+
+// Each project has three additional image spaces. Replace paths and captions,
+// then set placeholder: false on each gallery image containing David's work.
+window.PORTFOLIO.projects.forEach(project => {
+  project.gallery ??= [
+    { image: 'assets/gallery-wide.svg', alt: 'Placeholder for a project overview', caption: '01 / Overview', placeholder: true },
+    { image: 'assets/gallery-detail.svg', alt: 'Placeholder for a close-up project detail', caption: '02 / Details', placeholder: true },
+    { image: 'assets/gallery-process.svg', alt: 'Placeholder for sketches or a process image', caption: '03 / Process', placeholder: true }
+  ];
+});

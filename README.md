@@ -1,5 +1,8 @@
 # DavFXStudio
 
+![last commit](https://img.shields.io/github/last-commit/dav256/portfolio?style=for-the-badge)
+![repo size](https://img.shields.io/github/repo-size/dav256/portfolio?style=for-the-badge)
+
 my creative portfolio — design, photography, and digital media work.
 
 built with plain html, css, and javascript. no build step.

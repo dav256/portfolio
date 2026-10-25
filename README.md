@@ -3,9 +3,9 @@
 ![last commit](https://img.shields.io/github/last-commit/dav256/portfolio?style=for-the-badge)
 ![repo size](https://img.shields.io/github/repo-size/dav256/portfolio?style=for-the-badge)
 
-my creative portfolio — design, photography, and digital media work.
+> ### Portfolio and contact — [guns.lol/davfxstudio](https://guns.lol/davfxstudio)
 
-built with plain html, css, and javascript. no build step.
+DavFXStudio is my creative portfolio — design, photography, and digital media work, built with plain HTML, CSS, and JavaScript. No build step.
 
 ## run locally
 

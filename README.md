@@ -8,16 +8,16 @@
 
 The site is built with plain HTML, CSS, and JavaScript, with no build step. Each project is stored as an entry in `content.js`, so the portfolio can be updated by editing one structured file and adding images to `assets/`.
 
-## run locally
+## Run Locally
 
-requires node.js 20+
+Requires Node.js 20+
 
 ```
 npm start
 ```
 
-open `http://127.0.0.1:4173/portfolio/`
+Open `http://127.0.0.1:4173/portfolio/`
 
-## update
+## Update
 
-edit `content.js` — each project is an entry in the `projects` array (title, discipline, medium, image, description). images go in `assets/`.
+Edit `content.js` — each project is an entry in the `projects` array (title, discipline, medium, image, description). Images go in `assets/`.
